@@ -13,3 +13,8 @@
     - pytest
 
 ## ChatGpt : -  [Chatgpt](chatgpt.md)    
+
+# Version _ 02 
+## Author: Muhammad Al-sa'd "Navigator"
+
+## added some functionalty like roll quit and bank to save the point 
