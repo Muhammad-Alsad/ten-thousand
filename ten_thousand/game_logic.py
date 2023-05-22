@@ -70,6 +70,14 @@ class GameLogic:
                     score = 1200
 
         return score
+    @staticmethod
+    def validate_keepers(roll, keepers):
+        keeper_counter = Counter(keepers)
+        roll_counter = Counter(roll)
+
+        result = keeper_counter - roll_counter
+
+        return not result
 
     
 

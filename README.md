@@ -18,3 +18,9 @@
 ## Author: Muhammad Al-sa'd "Navigator"
 
 ## added some functionalty like roll quit and bank to save the point 
+
+
+# Version _ 03
+## Author: Muhammad Al-sa'd "Navigator"
+
+## added some functionalty like test_validater , cheater and zilcher.sim  
