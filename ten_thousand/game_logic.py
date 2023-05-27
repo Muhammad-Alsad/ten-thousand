@@ -71,6 +71,27 @@ class GameLogic:
 
         return score
     @staticmethod
+    def get_scorers(dice):
+        # help from my Bhagirath Bhatt
+        scoring_dice = GameLogic.calculate_score(dice)
+        scorers = []
+        if scoring_dice:
+            for i in range(len(dice)):
+                sub_roll = dice[:i] + dice[i + 1:]
+                sub_score = GameLogic.calculate_score(sub_roll)
+                if sub_score != scoring_dice:
+                    scorers.append(dice[i])
+
+        return tuple(scorers)
+
+    @staticmethod
+    def print_dice(roll):
+        string = ""
+        for dice in roll:
+            string += f"{str(dice)}"
+            string += ""
+        return string
+    @staticmethod
     def validate_keepers(roll, keepers):
         keeper_counter = Counter(keepers)
         roll_counter = Counter(roll)
@@ -90,3 +111,4 @@ if __name__ == '__main__':
     print(GameLogic.calculate_score([3, 3, 4, 4, 5, 5]))
     print(GameLogic.calculate_score([1, 3, 4, 4, 5, 1]))
     print(GameLogic.calculate_score([1, 3, 4, 3, 1, 1]))
+
