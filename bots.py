@@ -129,21 +129,27 @@ class BaseBot(ABC):
         )
 
 
-class muhammad(BaseBot):
+class NervousNellie(BaseBot):
     """Muhammad banks the first roll always"""
 
     def _roll_bank_or_quit(self):
         return "b"
 
 
-class computer(BaseBot):
+class myBot(BaseBot):
     def _roll_bank_or_quit(self):
 
         """your logic here"""
-        if self.dice_remaining > 300: 
-            return 'r'
+        # if self.dice_remaining > 300: 
+        #     return 'r'
             
-        return 'b'
+        # return 'b'
+        if self.unbanked_points >= 300:
+            return "b"
+        if self.dice_remaining >= 3:
+            return "r"
+        else:
+            return "b"
         
                     
     def _enter_dice(self):
@@ -180,5 +186,5 @@ class computer(BaseBot):
 
 if __name__ == "__main__":
     num_games = 100
-    muhammad.play(num_games)
-    computer.play(num_games)
+    NervousNellie.play(num_games)
+    myBot.play(num_games)
